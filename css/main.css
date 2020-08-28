@@ -44,3 +44,29 @@
 input, textarea, select {
     font-family: Quicksand;
 }
+
+.mainhead{
+    font-family: 'Poppins';
+    margin-top: 20px;
+    font-weight: bolder;
+    font-size: 1.8em;
+    color: #6f4a8e;
+    margin-bottom: 3%;
+}
+
+.col-head{
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 1.3em;
+    color: black;
+}
+
+.col-text{
+    font-family: 'Quicksand';
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+#logout{
+    font-family: 'Quicksand';
+}
