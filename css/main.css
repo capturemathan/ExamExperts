@@ -1,0 +1,46 @@
+
+#myform{
+    margin-top: 25px;
+}
+
+#navtext{
+    font-family: 'Pacifico';
+    font-size: 1.5em;
+    color: black;
+}
+
+#section{
+    margin-top: 5%;
+}
+
+.welcometext{
+    font-family: 'Poppins';
+    margin-top: 20px;
+    font-weight: bolder;
+    font-size: 1.8em;
+    color: #6f4a8e;
+}
+
+#login-btn{
+    width: 30%;
+    float: right;
+    margin-top: 10px;
+}
+
+.button{
+    font-family: 'Quicksand';
+}
+
+#register-btn{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.label{
+    font-family: 'Pacifico';
+    font-size: 1.2em;
+}
+
+input, textarea, select {
+    font-family: Quicksand;
+}
