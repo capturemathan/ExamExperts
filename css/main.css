@@ -13,7 +13,7 @@
     margin-top: 5%;
 }
 
-.welcometext{
+.welcometext,.registertext{
     font-family: 'Poppins';
     margin-top: 20px;
     font-weight: bolder;
