@@ -35,6 +35,11 @@
     width: 100%;
     margin-top: 10px;
 }
+#viewmore-btn{
+    width: 10%;
+    float: right;
+    margin-top: 10px;
+}
 
 .label{
     font-family: 'Pacifico';
@@ -42,7 +47,7 @@
 }
 
 input, textarea, select {
-    font-family: Quicksand;
+    font-family: 'Quicksand';
 }
 
 .mainhead{
@@ -69,4 +74,36 @@ input, textarea, select {
 }
 #logout{
     font-family: 'Quicksand';
+}
+.list-item{
+    padding: 10px;
+    color: black;
+    font-family: 'Lato';
+    font-size: 1.1em;
+}
+.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.list-item:hover{
+    color: white;
+    background-color: #6f4a8e;
+}
+.modal-head{
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 1.3em;
+    color: black;
+}
+.clg-text{
+    color: black;
+    font-family: 'Lato';
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    font-size: 1.1rem;
+}
+.side-align{
+    padding-left: 2%;
+    padding-right: 2%;
 }

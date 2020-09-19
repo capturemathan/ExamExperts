@@ -49,6 +49,7 @@
                 </div>
             </div>
             <div class="column is-4">
+                <a data-target = "#modal" class="modal-button">
                 <div class="box">
                     <div class="columns">
                         <div class="column is-6">
@@ -61,10 +62,10 @@
                             <div class="col-text">
                                 Search exams under your desired course
                             </div>
-                        </div>
-                        
+                        </div> 
                     </div>
                 </div>
+                </a>
             </div>
         </div>
         <div class="columns">
@@ -105,9 +106,67 @@
                 </div>
             </div>
         </div>
+        <!--MODAL-->
+        <div id="modal" class = "modal">
+            <div class = "modal-background"></div>
+            <div class = "modal-content">
+                <div class="box">
+                    <div class="columns is-vcentered">
+                        <div class="column is-6">
+                            <img src="../assets/course.png" alt="Courses">
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="modal-head">
+                                Select your Course
+                            </div>
+                        </div>
+                    </div>
+                <div class="list">
+                    <div class="list-item">
+                        <a data-target = "#modal1" class="modal-button">
+                            <li>Science</li>
+                        </a>
+                    </div>
+                    <div class="list-item">
+                        <a data-target = "#modal1" class="modal-button">
+                            <li>Engineering</li>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <button class = "modal-close is-large" aria-label="close"></button>
+         </div>
+         <div id="modal1" class = "modal">
+            <div class = "modal-background"></div>
+            <div class = "modal-content">
+                <div class="box">
+                    <div class="columns is-vcentered">
+                        <div class="column is-6">
+                            <img src="../assets/course.png" alt="Courses">
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="modal-head">
+                                Select your Country
+                            </div>
+                        </div>
+                    </div>
+                <div class="list">
+                    <div class="list-item">
+                        <li><a href="../pages/clg.html">India</li>
+                    </div>
+                    <div class="list-item">
+                        <li><a href="../pages/clg.html">Australia</li>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <button class = "modal-close is-large" aria-label="close"></button>
+         </div>
     </section>
     <!--Scripts ARENA-->
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
             var app = document.getElementById('navtext');
             var typewriter = new Typewriter(app, {
@@ -115,6 +174,17 @@
             });
             typewriter.typeString('Exam Experts')
                 .start();
+        // MODAL FUNCTIONS
+         $(".modal-button").click(function() {
+         var target = $(this).data("target");
+         $("html").addClass("is-clipped");
+         $(target).addClass("is-active");
+         });
+         
+         $(".modal-close").click(function() {
+         $("html").removeClass("is-clipped");
+         $(this).parent().removeClass("is-active");
+         });
         </script>
     <!--Scripts ARENA Ends-->   
   </body>
