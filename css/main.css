@@ -96,3 +96,14 @@ input, textarea, select {
     font-size: 1.3em;
     color: black;
 }
+.clg-text{
+    color: black;
+    font-family: 'Lato';
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    font-size: 1.1rem;
+}
+.side-align{
+    padding-left: 2%;
+    padding-right: 2%;
+}
