@@ -11,6 +11,35 @@
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
   </head>
+  <script>
+    function validate(){
+    var email = document.getElementById("Email").value
+     var t=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email == "") 
+    {
+      alert("Email must be filled out");
+      
+    }
+
+    if(!email.match(t))
+    {
+        alert("Enter valid email")
+    }
+    var pw=document.getElementById("pass").value;
+    var len=pw.length;
+  if(len<7)
+  {
+      alert("Password strength is weak")
+
+}
+var alpha= /^[0-9a-zA-Z]+$/
+ if(!pw.match(alpha))
+    {
+       
+        alert("Enter valid password")
+    }
+}
+  </script>
   <body>
 
     <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
@@ -31,18 +60,18 @@
           <div class="welcometext has-text-centered">
             Welcome Back
           </div>
-          <form action="" id="myform">
+          <form action="" id="myform" onSubmit="return validate()">
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="email" placeholder="capturesmk@gmail.com">
+                <input class="input" type="email" id="Email" placeholder="capturesmk@gmail.com">
               </div>
             </div>
             
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="password" placeholder="secret">
+                <input class="input" type="password" id="pass" placeholder="secret">
               </div>
             </div>
 
@@ -55,7 +84,7 @@
           </form>
 
           <div class="buttons is-centered">
-            <a class="button is-info is-rounded" id="register-btn" href="./pages/register.html">New User? Register Here</a>
+            <a class="button is-info is-rounded" onSubmit="return validate()" id="register-btn" href="./pages/register.html">New User? Register Here</a>
           </div>
 
         </div>
