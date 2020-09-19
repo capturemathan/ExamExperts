@@ -11,6 +11,53 @@
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
   </head>
+  <script>
+    function validate(){
+      var letters = /^[A-Za-z]+$/;
+      var x = document.getElementById("Name").value
+      if (x == "") 
+    {
+      alert("Name must be filled out");
+      
+    }
+
+    if(!x.match(letters))
+    {
+        alert("Enter valid Name")
+    }
+     var email = document.getElementById("Email").value
+     var t=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email == "") 
+    {
+      alert("Email must be filled out");
+      
+    }
+
+    if(!email.match(t))
+    {
+        alert("Enter valid email")
+    }
+      var pw=document.getElementById("pass").value;
+      var cpw=document.getElementById("cpass").value;
+       if(pw==cpw){}
+  else{
+    alert("Passwords do not match")
+  }
+
+  var len=pw.length;
+  if(len<7)
+  {
+      alert("Password strength is weak")
+
+}
+var alpha= /^[0-9a-zA-Z]+$/
+ if(!pw.match(alpha)||!cpw.match(alpha))
+    {
+       
+        alert("Enter valid password")
+    }
+}
+  </script>
   <body>
 
     <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
@@ -31,38 +78,38 @@
           <div class="registertext has-text-centered">
             Register Here
           </div>
-          <form action="" id="myform">
+          <form action="" id="myform" onsubmit="return validate()">
             <div class="field">
                 <label class="label">Name</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Muthu">
+                  <input class="input" id="Name" type="text" placeholder="Muthu">
                 </div>
             </div>
 
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="email" placeholder="msmuthu.sk@gmail.com">
+                <input class="input" id="Email"type="email" placeholder="msmuthu.sk@gmail.com">
               </div>
             </div>
             
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="password" placeholder="secret">
+                <input class="input" id="pass" type="password" placeholder="secret">
               </div>
             </div>
 
             <div class="field">
                 <label class="label">Confirm Password</label>
                 <div class="control">
-                  <input class="input" type="password" placeholder="secret">
+                  <input class="input" id="cpass" type="password" placeholder="secret">
                 </div>
             </div>
 
             <div class="field">
               <div class="control">  
-                <input name="register" id="login-btn" class="button is-success is-rounded" type="submit" value="Register">
+                <input name="register" id="login-btn" class="button is-success is-rounded" type="submit" onSubmit="return validate()"value="Register">
               </div>
             </div>
 
