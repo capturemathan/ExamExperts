@@ -1,0 +1,160 @@
+package xml;
+
+import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+
+
+public class login {
+	public static void main(String args[]) {
+		createPrettyXMLUsingDOM();
+		
+	}
+	private static void createPrettyXMLUsingDOM()
+	{
+	    try
+	    {
+	    	Class.forName("com.mysql.cj.jdbc.Driver");  
+		      Connection c=DriverManager.getConnection( 
+		        "jdbc:mysql://localhost:3306/NCP","root","password");  
+		      Statement s=c.createStatement();  
+		      // DATA is populated using US DATA CSV
+		      ResultSet rs=s.executeQuery("select * from Login");
+	        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+	        Document doc = docBuilder.newDocument();
+	        // students root element
+	        Element rootElement = doc.createElement("users");
+	        doc.appendChild(rootElement);
+	        int count=1;
+	        while(rs.next()&&count<7){  
+			        
+			      
+	        // student elements
+	        
+	        
+	            Element student = doc.createElement("user");
+	            
+	            Element studentmail = doc.createElement("email");
+	            studentmail.setTextContent("sai.sanjay7@gmail.com");
+	            
+	            
+	            //student.setAttribute("id", String.valueOf(i));
+	            student.appendChild(studentmail);
+	            Element studentpass = doc.createElement("pass");
+	            studentpass.setTextContent("Saisan27");
+	            student.appendChild(studentpass);
+	            Element studentname = doc.createElement("name");
+	            studentname.setTextContent("Sai Sanjay");
+	            student.appendChild(studentname);
+	            rootElement.appendChild(student);
+	            count++;
+	            
+	            Element student1 = doc.createElement("user");
+	            Element studentmail1 = doc.createElement("email");
+                studentmail1.setTextContent("capturesmk@gmail.com");
+                student1.appendChild(studentmail1);
+	            Element studentpass1 = doc.createElement("pass");
+	            studentpass1.setTextContent("Mathan08");
+	            student1.appendChild(studentpass1);
+	            Element studentname1 = doc.createElement("name");
+	            studentname1.setTextContent("Mathana Kumar");
+	            student1.appendChild(studentname1);
+	            rootElement.appendChild(student1);
+	            count++;
+	            
+	            Element student2 = doc.createElement("user");
+	            Element studentmail2 = doc.createElement("email");
+                studentmail2.setTextContent("msmuthu.sk@gmail.com");
+                student2.appendChild(studentmail2);
+	            Element studentpass2 = doc.createElement("pass");
+	            studentpass2.setTextContent("Muthusk41");
+	            student2.appendChild(studentpass2);
+	            Element studentname2 = doc.createElement("name");
+	            studentname2.setTextContent("Muthukumaaran");
+	            student2.appendChild(studentname2);
+	            rootElement.appendChild(student2);
+	            count++;
+	            
+	            Element student3 = doc.createElement("user");
+	            Element studentmail3 = doc.createElement("email");
+                studentmail3.setTextContent("ajaypranav06@gmail.com");
+                student3.appendChild(studentmail3);
+	            Element studentpass3 = doc.createElement("pass");
+	            studentpass3.setTextContent("Ajaypran06");
+	            student3.appendChild(studentpass3);
+	            Element studentname3 = doc.createElement("name");
+	            studentname3.setTextContent("Ajay Pranav");
+	            student3.appendChild(studentname3);
+	            rootElement.appendChild(student3);
+	            count++;
+	            
+	            Element student4 = doc.createElement("user");
+	            Element studentmail4 = doc.createElement("email");
+                studentmail4.setTextContent("mithilamarapareddy3115@gmail.com");
+                student4.appendChild(studentmail4);
+	            Element studentpass4 = doc.createElement("pass");
+	            studentpass4.setTextContent("Mithila3115");
+	            student4.appendChild(studentpass4);
+	            Element studentname4 = doc.createElement("name");
+	            studentname4.setTextContent("Mithila");
+	            student4.appendChild(studentname4);
+	            rootElement.appendChild(student4);
+	            count++;
+	            
+	            Element student5 = doc.createElement("user");
+	            Element studentmail5 = doc.createElement("email");
+                studentmail5.setTextContent("janardhanareddymc46@gmail.com");
+                student5.appendChild(studentmail5);
+	            Element studentpass5 = doc.createElement("pass");
+	            studentpass5.setTextContent("Janareddy46");
+	            student5.appendChild(studentpass5);
+	            Element studentname5 = doc.createElement("name");
+	            studentname5.setTextContent("Janardhana Reddy");
+	            student5.appendChild(studentname5);
+	            rootElement.appendChild(student5);
+	            count++;
+	            
+	            
+              
+	         
+               
+	           
+	            
+	            
+	            
+	            
+	           
+	        }
+	        
+	        // Write the content into XML file
+	        DOMSource source = new DOMSource(doc);
+	        StreamResult result = new StreamResult(new File("login-new.xml"));
+	        
+	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	        Transformer transformer = transformerFactory.newTransformer();
+	        // Beautify the format of the resulted XML
+	        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+	        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+	        transformer.transform(source, result);
+	    }
+	    catch(Exception ex)
+	    {
+	        ex.printStackTrace();
+	    }
+	}
+}
