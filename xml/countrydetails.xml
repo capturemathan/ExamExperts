@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<countries>
+    <country>
+        <countryid>USA</countryid>
+        <countryname>United States Of America</countryname>
+    </country>
+    <country>
+        <countryid>FRA</countryid>
+        <countryname>France</countryname>
+    </country>
+    <country>
+        <countryid>GER</countryid>
+        <countryname>Germany</countryname>
+    </country>
+    <country>
+        <countryid>RUS</countryid>
+        <countryname>Russia</countryname>
+    </country>
+    <country>
+        <countryid>IND</countryid>
+        <countryname>India</countryname>
+    </country>
+</countries>

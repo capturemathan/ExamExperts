@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="column is-4">
-                <a href="./courses.html" class="modal-button">
+                <a href="./courses.html">
                 <div class="box">
                     <div class="columns">
                         <div class="column is-6">
@@ -70,6 +70,7 @@
         </div>
         <div class="columns">
             <div class="column is-4 is-offset-1">
+                <a href="./exams.html">
                 <div class="box">
                     <div class="columns">
                         <div class="column is-6">
@@ -86,6 +87,7 @@
                         
                     </div>
                 </div>
+                </a>
             </div>
             <div class="column is-4 is-offset-2">
                 <div class="box">
@@ -109,7 +111,6 @@
     </section>
     <!--Scripts ARENA-->
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
             // TYPEWRITER JS
             var app = document.getElementById('navtext');
@@ -118,40 +119,6 @@
             });
             typewriter.typeString('Exam Experts')
                 .start();
-
-            // LOADING XML RESPONSE
-            function myFunction(xml) {
-                var i;
-                var xmlDoc = xml.responseXML;
-                var x = xmlDoc.getElementsByTagName("user");
-                var htmlbase = '<div class="list-item"><a><li class="course-item">';
-                var res='';
-                for (i = 0; i <x.length; i++) { 
-                    res += htmlbase+ x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +"</li></a></div>";
-                }
-                $("#courses").html(res);
-            }
-
-        // MODAL FUNCTIONS
-         $(".modal-button").click(function() {
-         var target = $(this).data("target");
-         $("html").addClass("is-clipped");
-         $(target).addClass("is-active");
-         var xmlhttp = new XMLHttpRequest();
-         xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                myFunction(this);
-            }
-        };
-        xmlhttp.open("GET", "../xml/userdetails.xml", true);
-        xmlhttp.send();
-         });
-         
-         $(".modal-close").click(function() {
-         $("html").removeClass("is-clipped");
-         $(this).parent().removeClass("is-active");
-         });
-         
         </script>
     <!--Scripts ARENA Ends-->   
   </body>

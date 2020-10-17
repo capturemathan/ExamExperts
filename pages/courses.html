@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="fetchXMLCountries()">
         <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
             <div class="navbar-menu is-active">
                 <div class="navbar-start">
@@ -24,16 +24,13 @@
             <form id="filters">
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Filters</label>
+                      <label class="label" id="filter-label">Filters</label>
                     </div>
                     <div class="field-body">
                       <div class="field">
                         <div class="control">
                           <div class="select is-fullwidth">
-                            <select>
-                              <option>Business development</option>
-                              <option>Marketing</option>
-                              <option>Sales</option>
+                            <select id="courses">
                             </select>
                           </div>
                         </div>
@@ -41,101 +38,50 @@
                       <div class="field">
                         <div class="control">
                           <div class="select is-fullwidth">
-                            <select>
-                              <option>Business development</option>
-                              <option>Marketing</option>
-                              <option>Sales</option>
+                            <select id="countries">
                             </select>
                           </div>
                         </div>
                       </div>
+                      <div class="field">
                       <p class="control">
-                        <a class="button is-info">
-                          Search
+                        <a class="button">
+                          Apply Filter
                         </a>
                       </p>
+                    </div>
                     </div>
                   </div>        
             </form>
             <div class="columns is-vcentered" id="college-list">
                 <div class="column is-2">
-                    <a href="https://www.northeastern.edu/">
                     <img alt="Northeastern University" src="../assets/north.png">
                     </a>
                 </div>
                 <div class="column side-align">
-                    <div class="mainhead">
+                    <div class="clg-name">
                         Northern University
                     </div>
                     <p class="clg-text">Northeastern University (NU or NEU) is a private research university in Boston, Massachusetts, established in 1898.
-                    The university offers undergraduate and graduate programs on its main campus in Boston.
-                    The university has satellite campuses in Charlotte, North Carolina; Seattle, Washington; San Jose, California;
-                    San Francisco, California; Toronto, Vancouver, and Portland, Maine that exclusively offer graduate degrees.</p>
-                    <div class="control">  
-                        <input name="register" id="viewmore-btn" class="button is-success is-rounded" type="submit" value="View more">
+                    The university offers undergraduate and graduate programs on its main campus in Boston.</p>
+                    <div class="clg-details">
+                      <span class="tag is-medium is-dark">Examination</span>
+                      <span class="clg-cutoff"></span>
+                    </div>
+                    <div class="clg-details">
+                      <span class="tag is-medium is-warning">Cut-Off Score</span>
+                      <span class="clg-cutoff"></span>
+                    </div>
+                    <div class="buttons is-right clg-btns">  
+                        <a class="button is-success clg-url">View More</a>
+                        <a class="button is-dark is-rounded clg-location">Locate in Maps</a>
                     </div>
                 </div>
-            </div>
-            <div class="columns is-vcentered">
-                <div class="column is-2">
-                    <a href="https://www.fiu.edu/">
-                    <img alt="FIU" src="../assets/fiu.png">
-                    </a>
-                </div>
-                <div class="column side-align">
-                    <div class="mainhead">
-                        Florida International University
-                    </div>
-                    <p class="clg-text">Florida International University (FIU) is a public research university in University Park, Miami, Florida.
-                    It is a member of the State University System of Florida.
-                    FIU is the first and only school in South Florida to achieve the "Emerging Preeminence" designation by the Florida Legislature.
-                    Founded in 1965, it has quickly grown to becoming the largest university in the Greater Miami region.
-                    It is the largest university in South Florida, the second-largest in Florida, and the fourth-largest in the United States by enrollment.</p>
-                    <div class="control">  
-                        <input name="register" id="viewmore-btn" class="button is-success is-rounded" type="submit" value="View more">
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-vcentered">
-                <div class="column is-2">
-                    <a href="https://www.stevens.edu/">
-                    <img alt="Stevens Institute of Technology" src="../assets/stevens.png">
-                    </a>
-                </div>
-                <div class="column side-align">
-                    <div class="mainhead">
-                        Stevens Institute of Technology
-                    </div>
-                    <p class="clg-text">Stevens Institute of Technology is a private research university in Hoboken, New Jersey.
-                    Incorporated in 1870, it is one of the oldest technological universities in the United States
-                    and was the first college in America solely dedicated to mechanical engineering.
-                    The campus encompasses Castle Point, the highest point in Hoboken, and several other buildings around the city.</p>
-                    <div class="control">  
-                        <input name="register" id="viewmore-btn" class="button is-success is-rounded" type="submit" value="View more">
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-vcentered">
-                <div class="column is-2">
-                    <a href="https://www.utdallas.edu/">
-                    <img alt="University of Texas" src="../assets/utd.png">  
-                    </a>
-                </div>
-                <div class="column side-align">
-                    <div class="mainhead">
-                        The University of Texas at Austin
-                    </div>
-                <p class="clg-text">The University of Texas at Austin, often referred to as UT Austin, UT, or Texas, is a public research university in Austin,
-                Texas and the flagship institution of the University of Texas System.
-                Founded in 1883, the University of Texas was inducted into the Association of American Universities in 1929, becoming only the third university in the American South to be elected.
-                The institution has the nation's eighth-largest single-campus enrollment, with over 50,000 undergraduate and graduate students and over 24,000 faculty and staff</p>
-                <div class="control">  
-                    <input name="register" id="viewmore-btn" class="button is-success is-rounded" type="submit" value="View more">
-                </div>        
             </div>
     </section>
     <!--Scripts ARENA-->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
       var app = document.getElementById('navtext');
       var typewriter = new Typewriter(app, {
@@ -143,6 +89,31 @@
       });
       typewriter.typeString('Exam Experts')
           .start();
+      
+      // LOADING XML RESPONSE
+      function myCountries(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var x = xmlDoc.getElementsByTagName("country");
+                var htmlbase = '<option>';
+                var res='';
+                for (i = 0; i <x.length; i++) { 
+                    res += htmlbase+ x[i].getElementsByTagName("countryname")[0].childNodes[0].nodeValue +"</option>";
+                }
+                $("#countries").append(res);
+        }
+
+        function fetchXMLCountries(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myCountries(this);
+            }
+        };
+        xmlhttp.open("GET", "../xml/countrydetails.xml", true);
+        xmlhttp.send();
+      }
+
     </script>
     <!--Scripts ARENA Ends-->
     </body>
