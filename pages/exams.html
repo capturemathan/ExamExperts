@@ -1,3 +1,6 @@
+<!--
+ Copyright (c) 2020 | Exam Experts
+-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,6 +10,69 @@
         <link rel="stylesheet" href="../css/main.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
     </head>
-    <body>
+
+    <body onload="fetchXMLCountries()">
+        <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
+            <div class="navbar-menu is-active">
+                <div class="navbar-start">
+                    <!-- navbar items -->
+                    <div class="navbar-item" id="navtext"></div>
+                </div>
+            </div>
+          </nav>
+        <section class="section" id="section"> 
+            <div class="columns is-vcentered" id="exam-list">
+                <div class="column side-align">
+                  <div class="box">
+                    <span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span>
+                    <div class="exam-name">
+                        GATE
+                    </div>
+                    <p class="exam-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, id tempora ipsam ea dolore dolor alias blanditiis repudiandae sequi, impedit tempore iusto porro eos cupiditate illo eum itaque? Quisquam, dignissimos!</p>
+                    <div class="exam-details">
+                        <span class="tag is-medium is-warning desc-tags">Total Marks</span>
+                        <span class="exam-cutoff"></span>
+                      </div>
+                  </div>
+                </div>
+            </div>
+    </section>
+    <!--Scripts ARENA-->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      var app = document.getElementById('navtext');
+      var typewriter = new Typewriter(app, {
+          loop: true
+      });
+      typewriter.typeString('Exam Experts')
+          .start();
+      
+      // LOADING XML RESPONSE
+      function myCountries(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var x = xmlDoc.getElementsByTagName("country");
+                var htmlbase = '<option>';
+                var res='';
+                for (i = 0; i <x.length; i++) { 
+                    res += htmlbase+ x[i].getElementsByTagName("countryname")[0].childNodes[0].nodeValue +"</option>";
+                }
+                $("#countries").append(res);
+        }
+
+        function fetchXMLCountries(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myCountries(this);
+            }
+        };
+        xmlhttp.open("GET", "../xml/countrydetails.xml", true);
+        xmlhttp.send();
+      }
+
+    </script>
+    <!--Scripts ARENA Ends-->
     </body>
 </html>
