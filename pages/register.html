@@ -50,7 +50,7 @@
       alert("Password strength is weak")
 
 }
-var alpha= /^[0-9a-zA-Z]+$/
+var alpha="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
  if(!pw.match(alpha)||!cpw.match(alpha))
     {
        
