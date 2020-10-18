@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Bookmarks>
+    <Bookmark>
+        <Email>capturesmk@gmail.com</Email>
+        <UniversityID>IIT</UniversityID>
+        <University>Indian Institute of Technology</University>
+        <Description>Indian Institute of Technology  is one of the top universities created to be Centres of Excellence for training, research and development in science, engineering and technology in India. </Description>
+        <URL>https://www.iitsystem.ac.in/</URL>
+        <Location>https://goo.gl/maps/1z2PWDgqDuKosfez5</Location>
+        <Cutoff>77</Cutoff>
+        <ExamID>GATE</ExamID>
+        <CountryID>IND</CountryID>
+        <CourseID>M.Tech</CourseID>
+    </Bookmark>
+    <Bookmark>
+        <Email>sai.sanjay7@gmail.com</Email>
+        <UniversityID>LMU</UniversityID>
+        <University>London Metropolitan University</University>
+        <Description>London Metropolitan University, commonly known as London Met, is a public research university in London, England. The University of North London and London Guildhall University merged in 2002 to create the university</Description>
+        <URL>https://www.londonmet.ac.uk/</URL>
+        <Location>https://goo.gl/maps/ismJFceFTD1WZX3L9</Location>
+        <Cutoff>6</Cutoff>
+        <ExamID>IELTS</ExamID>
+        <CountryID>UK</CountryID>
+        <CourseID>MBA</CourseID>
+    </Bookmark>
+</Bookmarks>

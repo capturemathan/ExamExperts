@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../css/main.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body onload="fetchXML()">
         <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
             <div class="navbar-menu is-active">
                 <div class="navbar-start">
@@ -23,50 +23,62 @@
           </nav>
           <section class="section">
           <div class="mainhead has-text-centered"><div class="box">Bookmarked Colleges</div></div>
-            <div class="columns is-vcentered" id="college-list">
-                <div class="column is-2">
-                    <img alt="Northeastern University" src="../assets/logos/NU.png">
-                    </a>
-                </div>
-                <div class="column side-align">
-                <div class="box">
-                    <div class="clg-name">
-                        Northern University
-                    </div>
-                    <p class="clg-desc">Northeastern University (NU or NEU) is a private research university in Boston, Massachusetts, established in 1898.
-                    The university offers undergraduate and graduate programs on its main campus in Boston.</p>
-                    <div class="clg-details">
-                    <div class="space-tags">
-                        <span class="tag is-medium is-warning desc-tags">Examination</span>
-                        <span class="clg-cutoff"></span>
-                    </div>
-                    <div>
-                        <span class="tag is-medium is-warning desc-tags">Cut-Off Score</span>
-                        <span class="clg-cutoff"></span>
-                    </div>
-                    </div>
-                    <div class="buttons is-right clg-btns">  
-                        <a class="button is-dark is-rounded clg-location">Locate in Maps</a>
-                        <a class="button is-link clg-url">View More</a>
-                    </div>
-                </div>
-                </div>
-            </div>
+          <div id="clgbk">
+          </div>
           <div class="mainhead has-text-centered"><div class="box">Bookmarked Exams</div></div>
-            <div class="columns is-vcentered" id="exam-list">
-                <div class="column side-align">
-                <div class="box">
-                    <div class="exam-name">
-                        GATE
-                    </div>
-                    <p class="exam-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, id tempora ipsam ea dolore dolor alias blanditiis repudiandae sequi, impedit tempore iusto porro eos cupiditate illo eum itaque? Quisquam, dignissimos!</p>
-                    <div class="exam-details">
-                        <span class="tag is-medium is-warning desc-tags">Total Marks</span>
-                        <span class="exam-cutoff"></span>
-                    </div>
-                </div>
-                </div>
-            </div>
+          <div id="exambk">
+          </div>
           </section>
+          <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+          <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script>
+
+            var app = document.getElementById('navtext');
+                var typewriter = new Typewriter(app, {
+                    loop: true
+                });
+                typewriter.typeString('Exam Experts')
+                    .start();
+
+            function myExams(xml) {
+                    var i;
+                    var xmlDoc = xml.responseXML;
+                    var x = xmlDoc.getElementsByTagName("Bookmark");
+                    
+            }
+
+        $(document).ready(function(){
+        var xml;
+        var c=0;
+        $.get('../xml/exambookmarks.xml', null, function (data, textStatus) {
+        xml=data;
+        $(xml).find('Bookmark').each( function(){
+                var item = $(this);
+                if(item.find('Email').text()==sessionStorage.getItem("emailID"))
+                {
+                    var htmlbase = '<div class="columns is-vcentered" id="exam-list"><div class="column side-align"><div class="box"><span class="tag is-link is-medium bookmark"><a>Delete from Bookmarks</a></span><div class="exam-name">';
+                    var res='';
+                    res += htmlbase+ item.find("ExamName").text() +"</div>"+'<p class="exam-desc">'+item.find("Description").text() + '<div class="exam-details"><span class="tag is-medium is-warning desc-tags">Total Marks</span><span class="exam-cutoff">'+ item.find("Totalmarks").text()+'</span></div></div></div></div>';
+                    $("#exambk").append(res);
+                }
+            });
+          });
+        
+        $.get('../xml/univbookmarks.xml', null, function (data, textStatus) {
+        xml=data;
+        $(xml).find('Bookmark').each( function(){
+                var item = $(this);
+                if(item.find('Email').text()==sessionStorage.getItem("emailID"))
+                {
+                    var htmlbase = '<div class="columns is-vcentered" id="college-list"><div class="column is-2"><img alt="college-pic" src="../assets/logos/';
+                    var res='';
+                    res += htmlbase+ item.find("UniversityID").text() +'.png"' + '></a></div><div class="column side-align"><div class="box"><span class="tag is-link is-medium bookmark"><a>Delete from Bookmarks</a></span><div class="clg-name">'+ item.find("UniversityName").text() + '</div><p class="clg-desc">' + item.find("Description").text() + '</p><div class="clg-details"><div class="space-tags"><span class="tag is-medium is-warning desc-tags">Examination</span><span class="clg-exam">' +item.find("ExamID").text() +'</span></div><div><span class="tag is-medium is-warning desc-tags">Cut-Off Score</span><span class="clg-cutoff">' + item.find("Cutoff").text()+'</span></div></div><div class="buttons is-right clg-btns"><a class="button is-dark is-rounded clg-location" target="_blank" href="'+item.find("Location").text()+'">Locate in Maps</a><a class="button is-link clg-url" target="_blank" href="'+item.find("URL").text()+'">View More</a></div></div></div></div>';
+                    $("#clgbk").append(res);
+                }
+            });
+          });      
+
+        });
+        </script>
     </body>
 </html>

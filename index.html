@@ -87,6 +87,7 @@
                 if(item.find('email').text()==$('#email').val() && item.find('pass').text()==$('#pass').val())
                 {
                   c=1;
+                  sessionStorage.setItem("emailID", $('#email').val());
                   return false;
                 }
                 else{

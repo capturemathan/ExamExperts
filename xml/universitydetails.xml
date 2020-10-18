@@ -7,34 +7,9 @@
         <URL>https://www.northeastern.edu/</URL>
         <Location>https://goo.gl/maps/cprhmsut4NAZGfuZ7</Location>
         <Cutoff>299</Cutoff>
-        <ExamID>GATE</ExamID>
-    </University>
-    <University>
-        <UniversityID>LMU</UniversityID>
-        <UniversityName>London Metropolitan University</UniversityName>
-        <Description>London Metropolitan University, commonly known as London Met, is a public research university in London, England. The University of North London and London Guildhall University merged in 2002 to create the university</Description>
-        <URL>https://www.londonmet.ac.uk/</URL>
-        <Location>https://goo.gl/maps/ismJFceFTD1WZX3L9</Location>
-        <Cutoff>6</Cutoff>
-        <ExamID>GATE</ExamID>
-    </University>
-    <University>
-        <UniversityID>ESC</UniversityID>
-        <UniversityName>ESC Clermont Business School</UniversityName>
-        <Description>ESC Clermont Business School is a business school located in France, in the city of Clermont-Ferrand. Established in 1919, the school of management is a Grande Ecole that is recognized by The French Ministry of Higher Education and Research.</Description>
-        <URL>https://www.esc-clermont.fr/en/</URL>
-        <Location>https://g.page/esc-clermont-bs?share</Location>
-        <Cutoff>85</Cutoff>
-        <ExamID>GATE</ExamID>
-    </University>
-    <University>
-        <UniversityID>SRH</UniversityID>
-        <UniversityName>SRH HOCHSCHULE HEIDELBERG</UniversityName>
-        <Description>The SRH University of Applied Sciences Heidelberg is a state-recognized private university in Heidelberg.The university opened on October 1, 1969 as a "facility for rehabilitation of people with disabilities in the tertiary education sector".</Description>
-        <URL>https://www.hs-fresenius.de/</URL>
-        <Location>https://goo.gl/maps/2VzZ2341G5U2DNRu9</Location>
-        <Cutoff>80</Cutoff>
-        <ExamID>GATE</ExamID>
+        <ExamID>GRE</ExamID>
+        <CountryID>USA</CountryID>
+        <CourseID>MS</CourseID>
     </University>
     <University>
         <UniversityID>IIT</UniversityID>
@@ -44,5 +19,40 @@
         <Location>https://goo.gl/maps/1z2PWDgqDuKosfez5</Location>
         <Cutoff>77</Cutoff>
         <ExamID>GATE</ExamID>
+        <CountryID>IND</CountryID>
+        <CourseID>M.Tech</CourseID>
+    </University>
+    <University>
+        <UniversityID>LMU</UniversityID>
+        <UniversityName>London Metropolitan University</UniversityName>
+        <Description>London Metropolitan University, commonly known as London Met, is a public research university in London, England. The University of North London and London Guildhall University merged in 2002 to create the university</Description>
+        <URL>https://www.londonmet.ac.uk/</URL>
+        <Location>https://goo.gl/maps/ismJFceFTD1WZX3L9</Location>
+        <Cutoff>6</Cutoff>
+        <ExamID>IELTS</ExamID>
+        <CountryID>UK</CountryID>
+        <CourseID>MBA</CourseID>
+    </University>
+    <University>
+        <UniversityID>ESC</UniversityID>
+        <UniversityName>ESC Clermont Business School</UniversityName>
+        <Description>ESC Clermont Business School is a business school located in France, in the city of Clermont-Ferrand. Established in 1919, the school of management is a Grande Ecole that is recognized by The French Ministry of Higher Education and Research.</Description>
+        <URL>https://www.esc-clermont.fr/en/</URL>
+        <Location>https://g.page/esc-clermont-bs?share</Location>
+        <Cutoff>85</Cutoff>
+        <ExamID>TOEFL</ExamID>
+        <CountryID>FRA</CountryID>
+        <CourseID>M.Com</CourseID>
+    </University>
+    <University>
+        <UniversityID>SRH</UniversityID>
+        <UniversityName>SRH HOCHSCHULE HEIDELBERG</UniversityName>
+        <Description>The SRH University of Applied Sciences Heidelberg is a state-recognized private university in Heidelberg.The university opened on October 1, 1969 as a "facility for rehabilitation of people with disabilities in the tertiary education sector".</Description>
+        <URL>https://www.hs-fresenius.de/</URL>
+        <Location>https://goo.gl/maps/VQCh2jpBGpGs1BTe8</Location>
+        <Cutoff>80</Cutoff>
+        <ExamID>TOEFL</ExamID>
+        <CountryID>GER</CountryID>
+        <CourseID>MA</CourseID>
     </University>
 </Universities>

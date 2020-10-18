@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body onload="checkLogin()">
     <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
         <div class="navbar-menu is-active">
             <div class="navbar-start">
@@ -121,6 +121,13 @@
             });
             typewriter.typeString('Exam Experts')
                 .start();
+
+            function checkLogin(){
+                if (sessionStorage.getItem("emailID") == null) {
+                    window.open('./error.html',"_self");
+                }
+            }
+
         </script>
     <!--Scripts ARENA Ends-->   
   </body>
