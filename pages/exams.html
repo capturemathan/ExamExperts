@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
     </head>
 
-    <body onload="fetchXMLCountries()">
+    <body onload="fetchXMLExams()">
         <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
             <div class="navbar-menu is-active">
                 <div class="navbar-start">
@@ -20,23 +20,8 @@
                 </div>
             </div>
           </nav>
-        <section class="section" id="section"> 
-            <div class="columns is-vcentered" id="exam-list">
-                <div class="column side-align">
-                  <div class="box">
-                    <span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span>
-                    <div class="exam-name">
-                        GATE
-                    </div>
-                    <p class="exam-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit, id tempora ipsam ea dolore dolor alias blanditiis repudiandae sequi, impedit tempore iusto porro eos cupiditate illo eum itaque? Quisquam, dignissimos!</p>
-                    <div class="exam-details">
-                        <span class="tag is-medium is-warning desc-tags">Total Marks</span>
-                        <span class="exam-cutoff"></span>
-                      </div>
-                  </div>
-                </div>
-            </div>
-    </section>
+        <section class="section" id="section">
+        </section>
     <!--Scripts ARENA-->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -49,26 +34,26 @@
           .start();
       
       // LOADING XML RESPONSE
-      function myCountries(xml) {
+      function myExams(xml) {
                 var i;
                 var xmlDoc = xml.responseXML;
-                var x = xmlDoc.getElementsByTagName("country");
-                var htmlbase = '<option>';
+                var x = xmlDoc.getElementsByTagName("Exam");
+                var htmlbase = '<div class="columns is-vcentered" id="exam-list"><div class="column side-align"><div class="box"><span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span><div class="exam-name">';
                 var res='';
                 for (i = 0; i <x.length; i++) { 
-                    res += htmlbase+ x[i].getElementsByTagName("countryname")[0].childNodes[0].nodeValue +"</option>";
+                    res += htmlbase+ x[i].getElementsByTagName("ExamName")[0].childNodes[0].nodeValue +"</div>"+'<p class="exam-desc">'+x[i].getElementsByTagName("Description")[0].childNodes[0].nodeValue + '<div class="exam-details"><span class="tag is-medium is-warning desc-tags">Total Marks</span><span class="exam-cutoff">'+ x[i].getElementsByTagName("Totalmarks")[0].childNodes[0].nodeValue+'</span></div></div></div></div>';
                 }
-                $("#countries").append(res);
+                $("#section").append(res);
         }
 
-        function fetchXMLCountries(){
+        function fetchXMLExams(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                myCountries(this);
+                myExams(this);
             }
         };
-        xmlhttp.open("GET", "../xml/countrydetails.xml", true);
+        xmlhttp.open("GET", "../xml/examdetails.xml", true);
         xmlhttp.send();
       }
 

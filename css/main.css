@@ -125,6 +125,21 @@ input, textarea, select {
     margin-top: 2%;
 }
 
+.exam-cutoff{
+    margin-left: 1%;
+    font-weight: bold;
+}
+
+.clg-cutoff{
+    margin-left: 1%;
+    font-weight: bold;
+}
+
+.clg-exam{
+    margin-left: 1%;
+    font-weight: bold;
+}
+
 .bookmark{
     font-family: "Quicksand";
     float: right;

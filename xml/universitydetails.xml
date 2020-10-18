@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Universities>
+    <University>
+        <UniversityID>NU</UniversityID>
+        <UniversityName>Northern University</UniversityName>
+        <Description>Northeastern University (NU or NEU) is a private research university in Boston, Massachusetts, established in 1898. The university offers undergraduate and graduate programs on its main campus in Boston.</Description>
+        <URL>https://www.northeastern.edu/</URL>
+        <Location>https://goo.gl/maps/cprhmsut4NAZGfuZ7</Location>
+        <Cutoff>299</Cutoff>
+        <ExamID>GATE</ExamID>
+    </University>
+    <University>
+        <UniversityID>LMU</UniversityID>
+        <UniversityName>London Metropolitan University</UniversityName>
+        <Description>London Metropolitan University, commonly known as London Met, is a public research university in London, England. The University of North London and London Guildhall University merged in 2002 to create the university</Description>
+        <URL>https://www.londonmet.ac.uk/</URL>
+        <Location>https://goo.gl/maps/ismJFceFTD1WZX3L9</Location>
+        <Cutoff>6</Cutoff>
+        <ExamID>GATE</ExamID>
+    </University>
+    <University>
+        <UniversityID>ESC</UniversityID>
+        <UniversityName>ESC Clermont Business School</UniversityName>
+        <Description>ESC Clermont Business School is a business school located in France, in the city of Clermont-Ferrand. Established in 1919, the school of management is a Grande Ecole that is recognized by The French Ministry of Higher Education and Research.</Description>
+        <URL>https://www.esc-clermont.fr/en/</URL>
+        <Location>https://g.page/esc-clermont-bs?share</Location>
+        <Cutoff>85</Cutoff>
+        <ExamID>GATE</ExamID>
+    </University>
+    <University>
+        <UniversityID>SRH</UniversityID>
+        <UniversityName>SRH HOCHSCHULE HEIDELBERG</UniversityName>
+        <Description>The SRH University of Applied Sciences Heidelberg is a state-recognized private university in Heidelberg.The university opened on October 1, 1969 as a "facility for rehabilitation of people with disabilities in the tertiary education sector".</Description>
+        <URL>https://www.hs-fresenius.de/</URL>
+        <Location>https://goo.gl/maps/2VzZ2341G5U2DNRu9</Location>
+        <Cutoff>80</Cutoff>
+        <ExamID>GATE</ExamID>
+    </University>
+    <University>
+        <UniversityID>IIT</UniversityID>
+        <UniversityName>Indian Institute of Technology</UniversityName>
+        <Description>Indian Institute of Technology  is one of the top universities created to be Centres of Excellence for training, research and development in science, engineering and technology in India. </Description>
+        <URL>https://www.iitsystem.ac.in/</URL>
+        <Location>https://goo.gl/maps/1z2PWDgqDuKosfez5</Location>
+        <Cutoff>77</Cutoff>
+        <ExamID>GATE</ExamID>
+    </University>
+</Universities>

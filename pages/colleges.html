@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
     </head>
 
-    <body onload="fetchXMLCountries()">
+    <body onload="fetchXML()">
         <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
             <div class="navbar-menu is-active">
                 <div class="navbar-start">
@@ -21,7 +21,7 @@
             </div>
           </nav>
         <section class="section" id="section">
-            <div class="columns">
+            <div class="columns" id="filter-div">
               <div class="column is-offset-2">
                 <form id="filters">
                   <div class="field is-horizontal">
@@ -56,36 +56,6 @@
                   </div>        
             </form>
             </div>
-            </div> 
-            <div class="columns is-vcentered" id="college-list">
-                <div class="column is-2">
-                    <img alt="Northeastern University" src="../assets/north.png">
-                    </a>
-                </div>
-                <div class="column side-align">
-                  <div class="box">
-                    <span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span>
-                    <div class="clg-name">
-                        Northern University
-                    </div>
-                    <p class="clg-desc">Northeastern University (NU or NEU) is a private research university in Boston, Massachusetts, established in 1898.
-                    The university offers undergraduate and graduate programs on its main campus in Boston.</p>
-                    <div class="clg-details">
-                      <div class="space-tags">
-                        <span class="tag is-medium is-warning desc-tags">Examination</span>
-                        <span class="clg-cutoff"></span>
-                      </div>
-                      <div>
-                        <span class="tag is-medium is-warning desc-tags">Cut-Off Score</span>
-                        <span class="clg-cutoff"></span>
-                      </div>
-                    </div>
-                    <div class="buttons is-right clg-btns">  
-                        <a class="button is-dark is-rounded clg-location">Locate in Maps</a>
-                        <a class="button is-link clg-url">View More</a>
-                    </div>
-                  </div>
-                </div>
             </div>
     </section>
     <!--Scripts ARENA-->
@@ -100,7 +70,19 @@
           .start();
       
       // LOADING XML RESPONSE
-      function myCountries(xml) {
+      function myColleges(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var x = xmlDoc.getElementsByTagName("University");
+                var htmlbase = '<div class="columns is-vcentered" id="college-list"><div class="column is-2"><img alt="college-pic" src="../assets/logos/';
+                var res='';
+                for (i = 0; i <x.length; i++) { 
+                    res += htmlbase+ x[i].getElementsByTagName("UniversityID")[0].childNodes[0].nodeValue +'.png"' + '></a></div><div class="column side-align"><div class="box"><span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span><div class="clg-name">'+ x[i].getElementsByTagName("UniversityName")[0].childNodes[0].nodeValue + '</div><p class="clg-desc">' + x[i].getElementsByTagName("Description")[0].childNodes[0].nodeValue + '</p><div class="clg-details"><div class="space-tags"><span class="tag is-medium is-warning desc-tags">Examination</span><span class="clg-exam">' +x[i].getElementsByTagName("ExamID")[0].childNodes[0].nodeValue +'</span></div><div><span class="tag is-medium is-warning desc-tags">Cut-Off Score</span><span class="clg-cutoff">' + x[i].getElementsByTagName("Cutoff")[0].childNodes[0].nodeValue+'</span></div></div><div class="buttons is-right clg-btns"><a class="button is-dark is-rounded clg-location" target="_blank" href="'+x[i].getElementsByTagName("Location")[0].childNodes[0].nodeValue+'">Locate in Maps</a><a class="button is-link clg-url" target="_blank" href="'+x[i].getElementsByTagName("URL")[0].childNodes[0].nodeValue+'">View More</a></div></div></div></div>';
+                }
+                $("#section").append(res);
+        }
+
+        function myCountries(xml) {
                 var i;
                 var xmlDoc = xml.responseXML;
                 var x = xmlDoc.getElementsByTagName("country");
@@ -112,7 +94,30 @@
                 $("#countries").append(res);
         }
 
-        function fetchXMLCountries(){
+        function myCourses(xml) {
+                var i;
+                var xmlDoc = xml.responseXML;
+                var x = xmlDoc.getElementsByTagName("Course");
+                var htmlbase = '<option>';
+                var res='';
+                for (i = 0; i <x.length; i++) { 
+                    res += htmlbase+ x[i].getElementsByTagName("CourseName")[0].childNodes[0].nodeValue +"</option>";
+                }
+                $("#courses").append(res);
+        }
+
+        function fetchXMLColleges(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myColleges(this);
+            }
+        };
+        xmlhttp.open("GET", "../xml/universitydetails.xml", true);
+        xmlhttp.send();
+      }
+
+      function fetchXMLCountries(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -121,6 +126,23 @@
         };
         xmlhttp.open("GET", "../xml/countrydetails.xml", true);
         xmlhttp.send();
+      }
+
+      function fetchXMLCourses(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myCourses(this);
+            }
+        };
+        xmlhttp.open("GET", "../xml/coursedetails.xml", true);
+        xmlhttp.send();
+      }
+
+      function fetchXML(){
+        fetchXMLCountries();
+        fetchXMLCourses();
+        fetchXMLColleges();
       }
 
     </script>

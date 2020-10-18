@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Courses>
+    <Course>
+        <CourseID>M.Tech</CourseID>
+        <CourseName>Masters of Technology</CourseName>
+    </Course>
+    <Course>
+        <CourseID>MS</CourseID>
+        <CourseName>Masters of Science</CourseName>
+    </Course>
+    <Course>
+        <CourseID>MBA</CourseID>
+        <CourseName>Masters of Business Administration</CourseName>
+    </Course>
+    <Course>
+        <CourseID>MA</CourseID>
+        <CourseName>Masters of Arts</CourseName>
+    </Course>
+    <Course>
+        <CourseID>M.Com</CourseID>
+        <CourseName>Masters of Commerce</CourseName>
+    </Course>
+</Courses>
