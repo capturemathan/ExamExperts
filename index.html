@@ -11,37 +11,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
   </head>
-  <script>
-    function validate(){
-    var email = document.getElementById("Email").value
-     var t=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (email == "") 
-    {
-      alert("Email must be filled out");
-      
-    }
-
-    if(!email.match(t))
-    {
-        alert("Enter valid email")
-    }
-    var pw=document.getElementById("pass").value;
-    var len=pw.length;
-  if(len<7)
-  {
-      alert("Password strength is weak")
-
-}
-var alpha= /^[0-9a-zA-Z]+$/
- if(!pw.match(alpha))
-    {
-       
-        alert("Enter valid password")
-    }
-}
-  </script>
   <body>
-
     <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
       <div class="navbar-menu is-active">
           <div class="navbar-start">
@@ -56,15 +26,20 @@ var alpha= /^[0-9a-zA-Z]+$/
         <div class="column is-6">
           <img src="./assets/placeholders/examexperts.png" class="logo">
         </div>
-        <div class="column">
+        <div class="column" id="login-form">
+          <article class="message" style="visibility: hidden;">
+            <div class="message-header">
+              Please provide the correct credentials
+            </div>
+          </article>
           <div class="welcometext has-text-centered">
             Welcome Back
           </div>
-          <form action="" id="myform" onSubmit="return validate()">
+          <form action="" id="myform">
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="email" id="Email" placeholder="capturesmk@gmail.com">
+                <input class="input" type="email" id="email" placeholder="capturesmk@gmail.com">
               </div>
             </div>
             
@@ -77,14 +52,13 @@ var alpha= /^[0-9a-zA-Z]+$/
 
             <div class="field">
               <div class="control">  
-                <input name="loginbtn" id="login-btn" class="button is-success is-rounded" type="submit" value="Login">
+                <input name="loginbtn" id="login-btn" class="button is-success is-rounded" value="Login">
               </div>
             </div>
-
           </form>
 
           <div class="buttons is-centered">
-            <a class="button is-info is-rounded" onSubmit="return validate()" id="register-btn" href="./pages/register.html">New User? Register Here</a>
+            <a class="button is-info is-rounded" id="register-btn" href="./pages/register.html">New User? Register Here</a>
           </div>
 
         </div>
@@ -93,6 +67,7 @@ var alpha= /^[0-9a-zA-Z]+$/
 
   <!--Scripts ARENA-->
   <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         var app = document.getElementById('navtext');
         var typewriter = new Typewriter(app, {
@@ -100,8 +75,36 @@ var alpha= /^[0-9a-zA-Z]+$/
         });
         typewriter.typeString('Exam Experts')
             .start();
+
+        $(document).ready(function(){
+        var xml;
+        var c=0;
+        $('#login-btn').click(function(){
+        $.get('./xml/userdetails.xml', null, function (data, textStatus) {
+        xml=data;
+        $(xml).find('user').each( function(){
+                var item = $(this);
+                if(item.find('email').text()==$('#email').val() && item.find('pass').text()==$('#pass').val())
+                {
+                  c=1;
+                  return false;
+                }
+                else{
+                  c=0;
+                }
+            });
+            console.log(c);
+            if(c==1){
+            window.open('./pages/dashboard.html',"_self");
+            }
+            else{
+            $(".message").css("visibility","visible");
+            }
+          });
+        });
+      });
+
     </script>
   <!--Scripts ARENA Ends-->
-
   </body>
 </html>

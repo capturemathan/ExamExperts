@@ -1,0 +1,41 @@
+<!--
+ Copyright (c) 2020 | Exam Experts
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exam Experts</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
+      <div class="navbar-menu is-active">
+          <div class="navbar-start">
+              <!-- navbar items -->
+              <div class="navbar-item" id="navtext"></div>
+          </div>
+      </div>
+    </nav>
+    <section id="heroid" class="hero is-fullheight is-hcentered is-vcentered">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <img src="../assets/placeholders/nologin.png" alt="no-login" height="512" width="512"/>
+                <p id="failtext">You aren't allowed to access this page</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script>
+        var app = document.getElementById('navtext');
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+        typewriter.typeString('Exam Experts')
+            .start();
+    </script>
+  </body>
+</html>

@@ -156,3 +156,11 @@ input, textarea, select {
 .desc-tags{
     font-family: "Quicksand";
 }
+
+.message{
+    font-family: "Quicksand";
+}
+
+#failtext{
+    font-family: Pacifico; color: black; font-size: 1.3em;
+}
