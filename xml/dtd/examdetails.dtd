@@ -1,0 +1,9 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Exams (Exam)+>
+
+<!ELEMENT Exam (ExamID,ExamName,Description,Totalmarks)>
+<!ELEMENT ExamID (#PCDATA)>
+<!ELEMENT ExamName (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Totalmarks (#PCDATA)>

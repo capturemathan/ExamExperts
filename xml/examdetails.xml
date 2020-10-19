@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE exams SYSTEM "./dtd/examdetails.dtd">
+<?xml-stylesheet type="text/xsl" href="examdetails.xsl"?>
 <Exams>
     <Exam>
         <ExamID>GRE</ExamID>

@@ -1,0 +1,14 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Universities (University)+>
+
+<!ELEMENT University (UniversityID,UniversityName,Description,URL,Location,Cutoff,ExamID,CountryID,CourseID)>
+<!ELEMENT UniversityID (#PCDATA)>
+<!ELEMENT UniversityName (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT URL (#PCDATA)>
+<!ELEMENT Location (#PCDATA)>
+<!ELEMENT Cutoff (#PCDATA)>
+<!ELEMENT ExamID (#PCDATA)>
+<!ELEMENT CountryID (#PCDATA)>
+<!ELEMENT CourseID (#PCDATA)>

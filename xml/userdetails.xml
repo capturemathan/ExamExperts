@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users SYSTEM "./dtd/userdetails.dtd">
+<?xml-stylesheet type="text/xsl" href="userdetails.xsl"?>
 <users>
     <user>
         <email>sai.sanjay7@gmail.com</email>

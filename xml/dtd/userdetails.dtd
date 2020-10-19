@@ -1,0 +1,8 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT users (user)+>
+
+<!ELEMENT user (email,pass,name)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT pass (#PCDATA)>
+<!ELEMENT name (#PCDATA)>

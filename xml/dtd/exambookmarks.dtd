@@ -1,0 +1,10 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Bookmarks (Bookmark)+>
+
+<!ELEMENT Bookmark (Email,ExamID,ExamName,Description,Totalmarks)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT ExamID (#PCDATA)>
+<!ELEMENT ExamName (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Totalmarks (#PCDATA)>

@@ -1,0 +1,6 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Courses (Course)+>
+<!ELEMENT Course (CourseID,CourseName)>
+<!ELEMENT CourseID (#PCDATA)>
+<!ELEMENT CourseName (#PCDATA)>

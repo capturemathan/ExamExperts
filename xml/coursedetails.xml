@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE courses SYSTEM "./dtd/coursedetails.dtd">
+<?xml-stylesheet type="text/xsl" href="./xsl/coursedetails.xsl"?>
 <Courses>
     <Course>
         <CourseID>M.Tech</CourseID>

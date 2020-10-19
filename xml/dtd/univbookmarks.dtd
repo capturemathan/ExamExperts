@@ -1,0 +1,15 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT Bookmarks (Bookmark)+>
+
+<!ELEMENT Bookmark (Email,UniversityID,University,Description,URL,Location,Cutoff,ExamID,CountryID,CourseID)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT UniversityID (#PCDATA)>
+<!ELEMENT University (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT URL (#PCDATA)>
+<!ELEMENT Location (#PCDATA)>
+<!ELEMENT Cutoff (#PCDATA)>
+<!ELEMENT ExamID (#PCDATA)>
+<!ELEMENT CountryID (#PCDATA)>
+<!ELEMENT CourseID (#PCDATA)>
