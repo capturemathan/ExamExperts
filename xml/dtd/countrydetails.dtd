@@ -1,6 +1,6 @@
 <?xml encoding="UTF-8"?>
 
-<!ELEMENT Countries (Country)+>
-<!ELEMENT Country (CountryID,CountryName)>
-<!ELEMENT CountryID (#PCDATA)>
-<!ELEMENT CountryName (#PCDATA)>
+<!ELEMENT countries (country)+>
+<!ELEMENT country (countryid,countryname)>
+<!ELEMENT countryid (#PCDATA)>
+<!ELEMENT countryname (#PCDATA)>

@@ -1,5 +1,3 @@
-package ncp;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -12,17 +10,17 @@ import javax.xml.validation.Validator;
 
 import org.xml.sax.SAXException;
 
-public class validations {
+public class univbkvalid{
   public static void main(String[] args) {
-    String countryXSD = "D:\\NCP Proj\\ExamExperts\\xml\\xsd\\countrydetails.xsd";
-    String countryXML = "D:\\NCP Proj\\ExamExperts\\xml\\countrydetails.xml";
+    String univbkXSD = "C:\\Users\\Hp\\Desktop\\My Projects\\ExamExperts\\xml\\xsd\\univbookmarks.xsd";
+    String univbkXML = "C:\\Users\\Hp\\Desktop\\My Projects\\ExamExperts\\xml\\univbookmarks.xml";
     boolean isValid;
     
-    isValid = validateXMLSchema(countryXSD, countryXML);
+    isValid = validateXMLSchema(univbkXSD,univbkXML);
         if(isValid) {
-          System.out.println("Country - Valid");
+          System.out.println("Univ Bookmarks - Valid");
         } else {
-          System.out.println("Country - Invalid");
+          System.out.println("Univ Bookmarks - Invalid");
         }
         
   }

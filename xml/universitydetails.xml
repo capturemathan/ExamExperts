@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE universities SYSTEM "./dtd/universitydetails.dtd">
+<!DOCTYPE Universities SYSTEM "./dtd/universitydetails.dtd">
 <?xml-stylesheet type="text/xsl" href="universitydetails.xsl"?>
 <Universities>
     <University>

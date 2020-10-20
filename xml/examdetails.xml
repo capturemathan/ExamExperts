@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE exams SYSTEM "./dtd/examdetails.dtd">
+<!DOCTYPE Exams SYSTEM "./dtd/examdetails.dtd">
 <?xml-stylesheet type="text/xsl" href="examdetails.xsl"?>
 <Exams>
     <Exam>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE bookmarks SYSTEM "./dtd/univbookmarks.dtd">
+<!DOCTYPE Bookmarks SYSTEM "./dtd/univbookmarks.dtd">
 <?xml-stylesheet type="text/xsl" href="univbookmarks.xsl"?>
 <Bookmarks>
     <Bookmark>
