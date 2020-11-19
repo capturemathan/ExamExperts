@@ -24,7 +24,6 @@ public class LoginDAO{
 			preparedStatement.setString(1, loginUtil.getUsername());
 			preparedStatement.setString(2, loginUtil.getPassword());
 
-			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			status = rs.next();
 
