@@ -23,7 +23,7 @@ public class BookmarksDAO{
 		Class.forName("com.mysql.cj.jdbc.Driver");
 
 		try (Connection connection = DriverManager
-				.getConnection("jdbc:mysql://localhost:3306/ncp?useSSL=false", "root", "pass");
+				.getConnection("jdbc:mysql://localhost:3306/ncp?allowPublicKeyRetrieval=true&useSSL=false", "root", "pass");
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection

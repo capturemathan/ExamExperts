@@ -14,7 +14,7 @@ import db.ExamsDAO;
 @WebServlet("/exams")
 public class ExamsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ExamsDAO examsDao;
+	public static ExamsDAO examsDao;
 
 	public void init() {
 		examsDao = new ExamsDAO();
@@ -48,7 +48,6 @@ public class ExamsServlet extends HttpServlet {
 
 		String examid = request.getParameter("eid");
 		String username = (String) request.getSession(false).getAttribute("email");
-		System.out.println("passed:"+examid);
 		ExamsUtil examsUtil  = new ExamsUtil();
 		examsUtil.seteid(examid);
 		examsUtil.setUsername(username);

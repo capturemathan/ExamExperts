@@ -22,17 +22,13 @@ public class CollegesDAO{
 		boolean status = false;
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		System.out.println("passed:"+collegesUtil.getuid());
+		System.out.println("passed: "+collegesUtil.getuid());
 		String universityid=collegesUtil.getuid(); 
-		//universityid = universityid.replaceAll("(\\r|\\n)", "");
-		//universityid = universityid.replaceAll("\\\\r","");
-		//universityid = universityid.replaceAll("\\\\n","");
-		System.out.println("replaced"+universityid);
 		if(collegesUtil.getuid() != null && collegesUtil.getuid().length()!=0)
 		{
 			//System.out.println("passed:"+collegesUtil.getuid());
 			try (Connection connection = DriverManager
-					.getConnection("jdbc:mysql://localhost:3306/ncp", "root", "password");
+					.getConnection("jdbc:mysql://localhost:3306/ncp?allowPublicKeyRetrieval=true&useSSL=false", "root", "pass");
 
 					//Step 2:Create a statement using connection object
 					PreparedStatement preparedStatement = connection
@@ -41,15 +37,7 @@ public class CollegesDAO{
 				preparedStatement.setString(2, universityid);
 
 				System.out.println(preparedStatement);
-				//String s=preparedStatement.toString();
 				preparedStatement.executeUpdate();
-//				//ResultSetMetaData rsmd = rs.getMetaData();
-//				
-//				
-//				if (rs.next()) {
-//					status=true;
-//	            }
-				
 			} catch (SQLException e) {
 				// process sql exception
 				printSQLException(e);
@@ -96,7 +84,7 @@ public class CollegesDAO{
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from universitybookmark join university on universitybookmark.UniversityID=university.UniversityID and universitybookmark.email= ?")) {
+						.prepareStatement("select * from universitybookmark join university on universitybookmark.universityID=university.universityID and universitybookmark.email= ?")) {
 			preparedStatement.setString(1, collegesUtil.getUsername());
 
 			System.out.println(preparedStatement);

@@ -3,6 +3,9 @@
 <%@ page import="org.json.simple.JSONArray" %>
 <%@ page import="org.json.simple.JSONObject" %>
 <%@ page import="org.json.simple.parser.JSONParser" %>
+<!--
+ Copyright (c) 2020 | Exam Experts
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,21 +48,22 @@
               		
               		<div class="field">
               		<div class="control">  
-              		   <input name ="eid" type="hidden"  value="<% out.print(jsonObject.get("ExamID")); %>">
+              		   <input name ="eid" type="hidden"  value="<% out.print(jsonObject.get("examID")); %>">
               		  <div class="buttons is-right clg-btns">
               		  <input type="submit" class="button is-success is-rounded" value="Save to Bookmarks">
               			</div>
               		</div>
             		</div>
+            		</form>
           				<div class="exam-name">
-          				<% out.println(jsonObject.get("ExamName")); %>
+          				<% out.println(jsonObject.get("exam")); %>
           				</div>
           				<p class="exam-desc">
-          				<% out.println(jsonObject.get("Description")); %>
+          				<% out.println(jsonObject.get("examDescription")); %>
           				</p>
           				<div class="exam-details">
           					<span class="tag is-medium is-warning desc-tags">TotalMarks</span>
-          					<span class="exam-cutoff"><% out.println(jsonObject.get("Totalmarks")); %></span>
+          					<span class="exam-cutoff"><% out.println(jsonObject.get("totalMarks")); %></span>
           				</div>
           			</div>
           		</div>
@@ -78,10 +82,6 @@
       });
       typewriter.typeString('Exam Experts')
           .start();
-      
-     
-     
-
     </script>
     <!--Scripts ARENA Ends-->
     </body>

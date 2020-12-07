@@ -38,9 +38,7 @@ public class CollegesServlet extends HttpServlet {
 			if (collegesDao.validate(collegesUtil)) {
 				response.setStatus(200);
 				JSONArray college = collegesDao.clgJSON;
-				//JSONArray examBookmarks = bookmarksDao.examJSON;
 				request.setAttribute("college",college.toString());
-				//request.setAttribute("examBookmarks",examBookmarks.toString());
 				request.getRequestDispatcher("colleges.jsp").forward(request, response);
 			} else {
 				response.setStatus(401);
@@ -55,7 +53,6 @@ public class CollegesServlet extends HttpServlet {
 
 		String univid = request.getParameter("uid");
 		String username = (String) request.getSession(false).getAttribute("email");
-		System.out.println("passed:"+univid);
 		CollegesUtil collegesUtil  = new CollegesUtil();
 		collegesUtil.setuid(univid);
 		collegesUtil.setUsername(username);

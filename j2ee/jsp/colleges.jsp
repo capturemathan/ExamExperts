@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
     </head>
 
-    <body onload="fetchXML()">
+    <body>
         <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
             <div class="navbar-menu is-active">
                 <div class="navbar-start">
@@ -40,7 +40,7 @@
           		JSONObject jsonObject = (JSONObject) jsonArray.get(i); %>
           	<div class="columns is-vcentered" id="college-list">
           		<div class="column is-2">
-          			<img alt="college-pic" src="<% out.println("./assets/logos/"+jsonObject.get("UniversityID")+".png"); %>">
+          			<img alt="college-pic" src="<% out.println("./assets/logos/"+jsonObject.get("universityID")+".png"); %>">
           		</div>
           		<div class="column side-align">
           			<div class="box">
@@ -48,7 +48,7 @@
               		
               		<div class="field">
               		<div class="control">  
-              		   <input name ="uid" type="hidden"  value="<% out.print(jsonObject.get("UniversityID")); %>">
+              		   <input name ="uid" type="hidden"  value="<% out.print(jsonObject.get("universityID")); %>">
               		  <div class="buttons is-right clg-btns">
               		  <input type="submit" class="button is-success is-rounded" value="Save to Bookmarks">
               			</div>
@@ -57,30 +57,31 @@
               		
           			</form>
           			<div class="clg-name">
-          			<% out.println(jsonObject.get("UniversityName")); %>
+          			<% out.println(jsonObject.get("university")); %>
           			</div>
           			<p class="clg-desc">
-          			<% out.println(jsonObject.get("Description")); %>
+          			<% out.println(jsonObject.get("univDescription")); %>
           			</p>
           			<div class="clg-details">
           				<div class="space-tags">
           					<span class="tag is-medium is-warning desc-tags">Examination</span>
-          					<span class="clg-exam"><% out.println(jsonObject.get("ExamID")); %></span>
+          					<span class="clg-exam"><% out.println(jsonObject.get("examID")); %></span>
           				</div>
           				<div>
           					<span class="tag is-medium is-warning desc-tags">Cut-Off Score</span>
-          					<span class="clg-cutoff"><% out.println(jsonObject.get("Cutoff")); %></span>
+          					<span class="clg-cutoff"><% out.println(jsonObject.get("expectedCutoff")); %></span>
           				</div>
           			</div>
           			<div class="buttons is-right clg-btns">
-          				<a class="button is-dark is-rounded clg-location" target="_blank" href="<% out.println(jsonObject.get("Location")); %>">Locate in Maps</a>
-          				<a class="button is-link clg-url" target="_blank" href="<% out.println(jsonObject.get("URL")); %>">View More</a>
+          				<a class="button is-dark is-rounded clg-location" target="_blank" href="<% out.println(jsonObject.get("location")); %>">Locate in Maps</a>
+          				<a class="button is-link clg-url" target="_blank" href="<% out.println(jsonObject.get("siteURL")); %>">View More</a>
           			</div>
           			</div>
           		</div>
           	</div>
           	<%} %>
            </div>
+          </section>
           		 
     <!--Scripts ARENA-->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
@@ -91,10 +92,7 @@
           loop: true
       });
       typewriter.typeString('Exam Experts')
-          .start();
-      
-      // LOADING XML RESPONSE
-      
+          .start();    
     </script>
     <!--Scripts ARENA Ends-->
     </body>

@@ -23,29 +23,20 @@ public class ExamsDAO{
 
     Class.forName("com.mysql.cj.jdbc.Driver");
 	String exid=examsUtil.geteid(); 
-	System.out.println("replaced"+exid);
     if(examsUtil.geteid() != null && examsUtil.geteid().length()!=0)
 	{
 		//System.out.println("passed:"+collegesUtil.getuid());
 		try (Connection connection = DriverManager
-				.getConnection("jdbc:mysql://localhost:3306/ncp", "root", "myaumspassword");
+				.getConnection("jdbc:mysql://localhost:3306/ncp?allowPublicKeyRetrieval=true&useSSL=false", "root", "pass");
 
 				//Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("insert into exambookmarks values(?,?)")) {
+						.prepareStatement("insert into exambookmark values(?,?)")) {
 			preparedStatement.setString(1, examsUtil.getUsername());
 			preparedStatement.setString(2, exid);
 
 			System.out.println(preparedStatement);
-			//String s=preparedStatement.toString();
 			preparedStatement.executeUpdate();
-//			//ResultSetMetaData rsmd = rs.getMetaData();
-//			
-//			
-//			if (rs.next()) {
-//				status=true;
-//            }
-			
 		} catch (SQLException e) {
 			// process sql exception
 			printSQLException(e);
@@ -56,7 +47,7 @@ public class ExamsDAO{
 
         // Step 2:Create a statement using connection object
         PreparedStatement preparedStatement = connection
-            .prepareStatement("select * from Exam")) {
+            .prepareStatement("select * from exam")) {
 
       System.out.println(preparedStatement);
       ResultSet rs = preparedStatement.executeQuery();
