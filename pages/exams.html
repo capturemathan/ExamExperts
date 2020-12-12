@@ -2,67 +2,82 @@
  Copyright (c) 2020 | Exam Experts
 -->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Exam Experts</title>
-        <link rel="stylesheet" href="../css/bulma.min.css">
-        <link rel="stylesheet" href="../css/main.css">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exam Experts</title>
+    <link rel="stylesheet" href="../css/bulma.min.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <body onload="fetchXMLExams()">
-        <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
-            <div class="navbar-menu is-active">
-                <div class="navbar-start">
-                    <!-- navbar items -->
-                    <div class="navbar-item" id="navtext"></div>
-                </div>
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <a href="" id="logout">Logout</a>
-                    </div>
-                </div>
-            </div>
-          </nav>
-        <section class="section" id="section">
-        </section>
+  <body onload="fetchXMLExams()">
+    <nav
+      class="navbar is-transparent is-fixed-top"
+      role="navigation"
+      aria-label="main navigation"
+      id="navbar"
+    >
+      <div class="navbar-menu is-active">
+        <div class="navbar-start">
+          <!-- navbar items -->
+          <div class="navbar-item" id="navtext"></div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a href="" id="logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="section" id="section"></section>
     <!--Scripts ARENA-->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-      var app = document.getElementById('navtext');
+      var app = document.getElementById("navtext");
       var typewriter = new Typewriter(app, {
-          loop: true
+        loop: true,
       });
-      typewriter.typeString('Exam Experts')
-          .start();
-      
+      typewriter.typeString("Exam Experts").start();
+
       // LOADING XML RESPONSE
       function myExams(xml) {
-                var i;
-                var xmlDoc = xml.responseXML;
-                var x = xmlDoc.getElementsByTagName("Exam");
-                var htmlbase = '<div class="columns is-vcentered" id="exam-list"><div class="column side-align"><div class="box"><span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span><div class="exam-name">';
-                var res='';
-                for (i = 0; i <x.length; i++) { 
-                    res += htmlbase+ x[i].getElementsByTagName("ExamName")[0].childNodes[0].nodeValue +"</div>"+'<p class="exam-desc">'+x[i].getElementsByTagName("Description")[0].childNodes[0].nodeValue + '<div class="exam-details"><span class="tag is-medium is-warning desc-tags">Total Marks</span><span class="exam-cutoff">'+ x[i].getElementsByTagName("Totalmarks")[0].childNodes[0].nodeValue+'</span></div></div></div></div>';
-                }
-                $("#section").append(res);
+        var i;
+        var xmlDoc = xml.responseXML;
+        var x = xmlDoc.getElementsByTagName("Exam");
+        var htmlbase =
+          '<div class="columns is-vcentered" id="exam-list"><div class="column side-align"><div class="box"><span class="tag is-link is-medium bookmark"><a>Save to Bookmarks</a></span><div class="exam-name">';
+        var res = "";
+        for (i = 0; i < x.length; i++) {
+          res +=
+            htmlbase +
+            x[i].getElementsByTagName("ExamName")[0].childNodes[0].nodeValue +
+            "</div>" +
+            '<p class="exam-desc">' +
+            x[i].getElementsByTagName("Description")[0].childNodes[0]
+              .nodeValue +
+            '<div class="exam-details"><span class="tag is-medium is-warning desc-tags">Total Marks</span><span class="exam-cutoff">' +
+            x[i].getElementsByTagName("Totalmarks")[0].childNodes[0].nodeValue +
+            "</span></div></div></div></div>";
         }
+        $("#section").append(res);
+      }
 
-        function fetchXMLExams(){
+      function fetchXMLExams() {
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                myExams(this);
-            }
+        xmlhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            myExams(this);
+          }
         };
         xmlhttp.open("GET", "../xml/examdetails.xml", true);
         xmlhttp.send();
       }
-
     </script>
     <!--Scripts ARENA Ends-->
-    </body>
+  </body>
 </html>

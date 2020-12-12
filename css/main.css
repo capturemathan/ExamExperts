@@ -1,166 +1,171 @@
-#myform{
-    margin-top: 25px;
+#myform {
+  margin-top: 25px;
 }
 
-#navtext{
-    font-family: 'Pacifico';
-    font-size: 1.5em;
-    color: black;
+#navtext {
+  font-family: "Pacifico";
+  font-size: 1.5em;
+  color: black;
 }
 
-#section{
-    margin-top: 3%;
+#section {
+  margin-top: 3%;
 }
 
-.welcometext,.registertext{
-    font-family: 'Poppins';
-    margin-top: 20px;
-    font-weight: bolder;
-    font-size: 1.8em;
-    color: #6f4a8e;
+.welcometext,
+.registertext {
+  font-family: "Poppins";
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 1.8em;
+  color: #6f4a8e;
 }
 
-#login-btn{
-    width: 30%;
-    float: right;
-    margin-top: 10px;
+#login-btn {
+  width: 30%;
+  float: right;
+  margin-top: 10px;
 }
 
-.button{
-    font-family: 'Quicksand';
+.button {
+  font-family: "Quicksand";
 }
 
-#register-btn{
-    width: 100%;
-    margin-top: 10px;
+#register-btn {
+  width: 100%;
+  margin-top: 10px;
 }
-#viewmore-btn{
-    margin-top: 10px;
-}
-
-.label{
-    font-family: 'Pacifico';
-    font-size: 1.2em;
+#viewmore-btn {
+  margin-top: 10px;
 }
 
-input, textarea, select {
-    font-family: 'Quicksand';
+.label {
+  font-family: "Pacifico";
+  font-size: 1.2em;
 }
 
-.mainhead{
-    font-family: 'Poppins';
-    margin-top: 20px;
-    font-weight: bolder;
-    font-size: 1.8em;
-    color: #6f4a8e;
-    margin-bottom: 1%;   
+input,
+textarea,
+select {
+  font-family: "Quicksand";
 }
 
-.clg-name{
-    font-family: 'Poppins';
-    font-weight: bolder;
-    font-size: 1.8em;
-    color: #6f4a8e;
-    margin-bottom: 1%;
+.mainhead {
+  font-family: "Poppins";
+  margin-top: 20px;
+  font-weight: bolder;
+  font-size: 1.8em;
+  color: #6f4a8e;
+  margin-bottom: 1%;
 }
 
-.col-head{
-    font-family: 'Poppins';
-    font-weight: bolder;
-    font-size: 1.3em;
-    color: black;
+.clg-name {
+  font-family: "Poppins";
+  font-weight: bolder;
+  font-size: 1.8em;
+  color: #6f4a8e;
+  margin-bottom: 1%;
 }
 
-.col-text{
-    font-family: 'Quicksand';
-    margin-top: 10px;
-    font-size: 0.8em;
-    font-weight: normal;
-}
-#logout{
-    font-family: 'Quicksand';
+.col-head {
+  font-family: "Poppins";
+  font-weight: bolder;
+  font-size: 1.3em;
+  color: black;
 }
 
-.clg-desc{
-    color: black;
-    font-family: 'Lato';
-    font-weight: bold;
-    letter-spacing: 0.3px;
-    font-size: 1.1rem;
+.col-text {
+  font-family: "Quicksand";
+  margin-top: 10px;
+  font-size: 0.8em;
+  font-weight: normal;
 }
-.side-align{
-    padding-left: 2%;
-    padding-right: 2%;
-}
-.clg-details{
-    margin-top: 2%;
-}
-#filter-label{
-    font-family: "Poppins";
-    font-size: 1.2rem;
-    font-weight: lighter;
+#logout {
+  font-family: "Quicksand";
 }
 
-.space-tags{
-    margin-bottom: 1%;
+.clg-desc {
+  color: black;
+  font-family: "Lato";
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  font-size: 1.1rem;
+}
+.side-align {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.clg-details {
+  margin-top: 2%;
+}
+#filter-label {
+  font-family: "Poppins";
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
 
-.exam-name{
-    font-family: 'Poppins';
-    font-weight: bolder;
-    font-size: 1.8em;
-    color: #6f4a8e;
-    margin-bottom: 1%;
+.space-tags {
+  margin-bottom: 1%;
 }
 
-.exam-desc{
-    color: black;
-    font-family: 'Lato';
-    font-weight: bold;
-    letter-spacing: 0.3px;
-    font-size: 1.1rem;
+.exam-name {
+  font-family: "Poppins";
+  font-weight: bolder;
+  font-size: 1.8em;
+  color: #6f4a8e;
+  margin-bottom: 1%;
 }
 
-.exam-details{
-    margin-top: 2%;
+.exam-desc {
+  color: black;
+  font-family: "Lato";
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  font-size: 1.1rem;
 }
 
-.exam-cutoff{
-    margin-left: 1%;
-    font-weight: bold;
+.exam-details {
+  margin-top: 2%;
 }
 
-.clg-cutoff{
-    margin-left: 1%;
-    font-weight: bold;
+.exam-cutoff {
+  margin-left: 1%;
+  font-weight: bold;
 }
 
-.clg-exam{
-    margin-left: 1%;
-    font-weight: bold;
+.clg-cutoff {
+  margin-left: 1%;
+  font-weight: bold;
 }
 
-.bookmark{
-    font-family: "Quicksand";
-    float: right;
+.clg-exam {
+  margin-left: 1%;
+  font-weight: bold;
 }
 
-.bookmark a{
-    color: white;
+.bookmark {
+  font-family: "Quicksand";
+  float: right;
 }
 
-.bookmark a:hover{
-    color: black;
+.bookmark a {
+  color: white;
 }
 
-.desc-tags{
-    font-family: "Quicksand";
+.bookmark a:hover {
+  color: black;
 }
 
-.message{
-    font-family: "Quicksand";
+.desc-tags {
+  font-family: "Quicksand";
 }
 
-#failtext{
-    font-family: Pacifico; color: black; font-size: 1.3em;
+.message {
+  font-family: "Quicksand";
+}
+
+#failtext {
+  font-family: Pacifico;
+  color: black;
+  font-size: 1.3em;
 }
