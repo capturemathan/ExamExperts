@@ -1,0 +1,15 @@
+# REGISTRATION & LOGIN
+1. (email,pwd,Name)
+
+# COURSES & EXAMS
+2. (courseID,course)
+3. (countryID,country)
+4. (universityID,university,univDescription,siteURL,location,expectedCutoff)
+5. (examID,exam,examDescription,totalMarks)
+6. (universityID,courseID,examID,countryID)
+
+# BOOKMARKS
+7. (email,universityID) {Bookmarks only UNIVERSITY}
+8. (email,examID) {Bookmarks only EXAM}
+
+# RANK PREDICTOR
